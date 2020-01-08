@@ -1,0 +1,16 @@
+<ul id="restaurants">
+    {{#each restaurants}}
+        <li style="background-image: url({{{the_image this}}});">
+            <a href="/restaurants/{{this.restaurant_id}}">
+                <h3>{{this.name}}</h3>
+                <p>{{this.address.street}} {{this.address.building}}, {{this.borough}}</p>
+            </a>
+        </li>
+    {{/each}}
+</ul>
+{{#if pagination}}
+    <nav id="pagination">
+        {{{ pagination.previous }}}
+        {{{ pagination.next }}}
+    </nav>
+{{/if}}
